@@ -6,16 +6,32 @@ By default there's no target, but you can specify a region and a tag, see below:
  
 ## Setup
 
+
+```
 python3 -m venv tig
 pip3 install -r requirements.txt
 source bin/activate
+```
 
-test:
-python iam-gen.py waf
-
+## Run
 
 ```
-$ python3 iam-gene.py ec2 eu-central-1
+$ python iam-gen.py waf                                                      
+🔹 Service: waf
+🔹 Fetching GitHub repo tree...
+   Go files found: 75
+🔹 Fetching service reference JSON...
+   Service reference actions: 77
+🔹 Scanning Go files...
+   [1/75] internal/service/waf/byte_match_set.go
+   [75/75] internal/service/wafv2/web_acl_rule_group_association.go
+   Common functions: 69
+✅ Wrote waf-read.json (29 actions)
+✅ Wrote waf-write.json (40 actions)
+
+
+
+$ python3 iam-gen.py ec2 eu-central-1
 🔹 Service: ec2
 🔹 Region restriction: eu-central-1
 🔹 Fetching GitHub repo tree...
