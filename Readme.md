@@ -4,6 +4,15 @@ It extract all AWS API calls from a Tofu module, it compares this list with the 
 Then it creates a IAM police for them, for EC2 is also splits the writes in server operation and network operation.
 By default there's no target, but you can specify a region and a tag, see below:
  
+## Setup
+
+python3 -m venv tig
+pip3 install -r requirements.txt
+source bin/activate
+
+test:
+python iam-gen.py waf
+
 
 ```
 $ python3 iam-gene.py ec2 eu-central-1
